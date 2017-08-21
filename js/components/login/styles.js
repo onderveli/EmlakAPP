@@ -8,12 +8,10 @@ export default {
   imageContainer: {
     flex: 1,
     width: null,
-    height: null
+    height: null,
   },
   logoContainer: {
     flex: 1,
-    marginTop: deviceHeight / 8,
-    marginBottom: 30
   },
   logo: {
     position: "absolute",
@@ -26,5 +24,8 @@ export default {
     color: "#D8D8D8",
     bottom: 6,
     marginTop: 5
+  },
+  mb15: {
+    marginBottom: 20
   }
 };

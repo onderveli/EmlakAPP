@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Image } from "react-native";
+import { Image, View, StatusBar } from "react-native";
 
 import {
 	Content,
@@ -15,7 +15,6 @@ import {
 	Right,
 	Badge,
 	Button,
-	View,
 	StyleProvider,
 	getTheme,
 	variables,
@@ -42,7 +41,7 @@ const infos = [
 	},
 	{
 		name: "İlan Ver",
-		route: "Pages",
+		route: "Login",
 		icon: "paper-plane",
 
 	}
