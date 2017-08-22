@@ -17,6 +17,9 @@ import Header6 from "./components/Header/6";
 import Header7 from "./components/Header/7";
 import Header8 from "./components/Header/8";
 import BasicFooter from "./components/footer/basicFooter";
+
+import NHRegister from "./components/login/register";
+
 import IconFooter from "./components/footer/iconFooter";
 import IconText from "./components/footer/iconText";
 import BadgeFooter from "./components/footer/badgeFooter";
@@ -91,6 +94,8 @@ const AppNavigator = StackNavigator(
         Header6: { screen: Header6 },
         Header7: { screen: Header7 },
         Header8: { screen: Header8 },
+
+        NHRegister:{screen:NHRegister},
 
         BasicFooter: { screen: BasicFooter },
         IconFooter: { screen: IconFooter },

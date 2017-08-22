@@ -71,7 +71,7 @@ const DrawerExample = DrawerNavigator(
     Actionsheet: { screen: Actionsheet }
   },
   {
-    initialRouteName: "Pages",
+    initialRouteName: "Login",
     contentOptions: {
       activeTintColor: "#e91e63"
     },

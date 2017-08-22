@@ -23,6 +23,9 @@ import BasicFooter from "./components/footer/basicFooter";
 import IconFooter from "./components/footer/iconFooter";
 import IconText from "./components/footer/iconText";
 import BadgeFooter from "./components/footer/badgeFooter";
+
+import NHRegister from "./components/login/register";
+
 import NHBadge from "./components/badge/";
 import NHButton from "./components/button/";
 import Default from "./components/button/default";
