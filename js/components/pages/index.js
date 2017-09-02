@@ -10,6 +10,7 @@ import {
   Input,
   H1,
   H3,
+  ActionSheet,
   Thumbnail,
   List,
   ListItem,
@@ -82,21 +83,21 @@ const cards = [
 
 const infos = [
 	{
-		name: "Emlak",
+		name: "Konut",
 		subtitle:"Konut, İşyeri, Arsa, Projeler, Bina",
 		route: "Pages",
 		icon: "home",
 		bg: "#C5F442",
 	},
 	{
-		name: "Vasıta",
+		name: "İşyeri",
 		subtitle:"Konut, İşyeri, Arsa, Projeler, Bina",
 		route: "Actionsheet",
 		icon: "car",
 		bg: "#C5F442",
 	},
 	{
-		name: "Yedek Parça",
+		name: "Arsa",
 		subtitle:"Konut, İşyeri, Arsa, Projeler, Bina",
 		route: "Header",
 		icon: "settings",
@@ -104,7 +105,7 @@ const infos = [
 		types: "8",
 	},
 	{
-		name: "İkinci El",
+		name: "Projeler",
 		subtitle:"Konut, İşyeri, Arsa, Projeler, Bina",
 		route: "Footer",
 		icon: "basket",
@@ -243,9 +244,14 @@ const infos = [
 		bg: "#48525D",
 	},
 ];
-
+var BUTTONS = ["Option 0", "Option 1", "Option 2", "Delete", "Cancel"];
+var DESTRUCTIVE_INDEX = 3;
+var CANCEL_INDEX = 4;
 class Pages extends Component {
-
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
   render() {
     return (
       <Container>
@@ -270,7 +276,22 @@ class Pages extends Component {
           <Item>
             <Icon active name="search" />
             <Input placeholder="Search" />
-            <Icon active name="attach" />
+            <Button
+            transparent
+              onPress={() =>
+                ActionSheet.show(
+                  {
+                    options: BUTTONS,
+                    cancelButtonIndex: CANCEL_INDEX,
+                    destructiveButtonIndex: DESTRUCTIVE_INDEX,
+                    title: "Filtreleme Seçenekleri"
+                  },
+                  buttonIndex => {
+                    this.setState({ clicked: BUTTONS[buttonIndex] });
+                  }
+                )}
+            >
+            <Icon active name="attach" /></Button>
           </Item>
         </View>
 
@@ -338,7 +359,7 @@ class Pages extends Component {
                     <List
                       dataArray={datas}
                       renderRow={data =>
-                        <ListItem thumbnail button onPress={() => this.props.navigation.navigate("Login")}>
+                        <ListItem thumbnail button onPress={() => this.props.navigation.navigate("Detail")}>
                           <Left>
                             <Thumbnail square size={55} source={data.img} />
                           </Left>

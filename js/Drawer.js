@@ -6,6 +6,7 @@ import { DrawerNavigator } from "react-navigation";
 import Login from "./components/login/";
 import Header from "./components/Header/";
 import Pages from "./components/pages/";
+import Detail from "./components/detail/";
 
 import Footer from "./components/footer/";
 import NHBadge from "./components/badge/";
@@ -41,6 +42,7 @@ const DrawerExample = DrawerNavigator(
   {
     Login: { screen: Login },
     Pages: { screen: Pages },
+    Detail: { screen: Detail },
     Header: { screen: Header },
     Footer: { screen: Footer },
     NHBadge: { screen: NHBadge },
@@ -71,7 +73,7 @@ const DrawerExample = DrawerNavigator(
     Actionsheet: { screen: Actionsheet }
   },
   {
-    initialRouteName: "Login",
+    initialRouteName: "Detail",
     contentOptions: {
       activeTintColor: "#e91e63"
     },

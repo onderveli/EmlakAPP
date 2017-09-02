@@ -16,7 +16,10 @@ import Header5 from "./components/Header/5";
 import Header6 from "./components/Header/6";
 import Header7 from "./components/Header/7";
 import Header8 from "./components/Header/8";
+
 import Pages from "./components/pages/";
+import Detail from "./components/detail/";
+
 
 import Footer from "./components/footer/";
 import BasicFooter from "./components/footer/basicFooter";
