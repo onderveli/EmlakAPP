@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Image, View,ScrollView } from "react-native";
 import ImageSlider from 'react-native-image-slider';
 import { Grid, Col } from "react-native-easy-grid";
+import Accordion from 'react-native-collapsible/Accordion';
+import * as Animatable from 'react-native-animatable';
 import {
   Container,
   Header,
@@ -31,6 +33,17 @@ import {
 
 import styles from "./styles";
 
+const SECTIONS = [
+  {
+    title: 'First',
+    content: 'İlk Accordion açıldı',
+  },
+  {
+    title: 'Second',
+    content: 'ikinci Accordion açıldı',
+  }
+];
+
 class Detail extends Component {
 
   constructor(props) {
@@ -48,6 +61,28 @@ class Detail extends Component {
   componentWillUnmount() {
       clearInterval(this.state.interval);
   }
+
+  _renderHeader(section, index, isActive) {
+    return (
+      <Animatable.View>
+        <Text style={styles.expandedBand}>
+
+        {section.title}</Text>
+      </Animatable.View>
+    );
+  }
+
+  _renderContent(section, i, isActive) {
+    return (
+      <Animatable.View>
+        <Animatable.Text style={styles.expandedDetail}>
+          {section.content}
+        </Animatable.Text>
+      </Animatable.View>
+    );
+  }
+
+
   render() {
       return (
         <Container>
@@ -69,7 +104,7 @@ class Detail extends Component {
             </Right>
           </Header>
           <View style={styles.titleBand}>
-            <Text style={{color:"black",fontSize:15,textAlign:'center'}}>İlan Başlığı Burada Görüntülenecek</Text>
+            <Text style={{color:"white",fontSize:15,textAlign:'center'}}>İlan Başlığı Burada Görüntülenecek</Text>
           </View>
           <ScrollView>
           <View style={styles.container}>
@@ -83,8 +118,8 @@ class Detail extends Component {
                   onPositionChanged={position => this.setState({position})}/>
           </View>
           <View style={styles.infoBand}>
-            <Text style={{color:"blue",fontSize:13,textAlign:'center'}}>Emlak-Konut-Sahibinden-Kiralık</Text>
-            <Text style={{color:"black",fontSize:13,textAlign:'center'}}>Konya, Selçuklu, Cumhuriyet Mah.</Text>
+            <Text style={{color:"#570219",fontSize:13,textAlign:'center'}}>Emlak-Konut-Sahibinden-Kiralık</Text>
+            <Text style={{color:"#570219",fontSize:13,textAlign:'center'}}>Konya, Selçuklu, Cumhuriyet Mah.</Text>
           </View>
           <View style={styles.propertiesBand}>
             <Grid>
@@ -131,11 +166,22 @@ class Detail extends Component {
             </Grid>
           </View>
 
+          <Accordion
+            sections={SECTIONS}
+            renderHeader={this._renderHeader}
+            renderContent={this._renderContent}
+          />
 
           </ScrollView>
           <Footer style={styles.footer}>
-            <Button full info style={styles.footerButton}><Text>Açıklama</Text></Button>
-            <Button full info style={styles.footerButton}><Text>Konumu</Text></Button>
+            <Grid>
+              <Col>
+                <Button full info style={styles.footerButton}><Text>Açıklama</Text></Button>
+              </Col>
+              <Col>
+                <Button full info style={styles.footerButton}><Text>Konumu</Text></Button>
+              </Col>
+            </Grid>
           </Footer>
           </Container>
 

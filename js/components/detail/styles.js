@@ -6,7 +6,7 @@ export default {
   titleBand:
   {
     height:50,
-    backgroundColor:'darkgrey',
+    backgroundColor:'#64001c',
     padding:10,
     justifyContent: 'center',
 
@@ -14,9 +14,10 @@ export default {
   infoBand:
   {
     height:50,
-    backgroundColor:'lightgrey',
+    backgroundColor:'#c70039',
     padding:10,
     justifyContent: 'center',
+      opacity:0.9
 
   },
   propertiesBand:
@@ -29,11 +30,27 @@ export default {
   footer:{
     backgroundColor:"white",
     borderTopWidth:1,
-  borderColor:"grey"  },
+  borderColor:"lightgrey",
+  },
   footerButton:
   {
-    marginRight:10,
-    marginLeft:10
-  }
+margin:5,
+backgroundColor:"#c70039",
+  },
 
+  container: {
+   flex: 1,
+   backgroundColor: '#F5FCFF',
+ },
+ expandedBand:{
+   backgroundColor:"#4a0521",
+   margin:5,
+   color:"white",
+   padding:10,
+   justifyContent: 'center',
+ },
+ expandedDetail:{
+   padding:10,
+   justifyContent: 'center',
+ }
 };
