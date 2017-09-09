@@ -28,7 +28,7 @@ export default {
     justifyContent: 'center',
   },
   footer:{
-    backgroundColor:"white",
+    backgroundColor:"#f8f8f8",
     borderTopWidth:1,
   borderColor:"lightgrey",
   },
@@ -37,20 +37,41 @@ export default {
 margin:5,
 backgroundColor:"#c70039",
   },
-
-  container: {
+container: {
    flex: 1,
-   backgroundColor: '#F5FCFF',
+   backgroundColor: 'white',
  },
  expandedBand:{
-   backgroundColor:"#4a0521",
-   margin:5,
-   color:"white",
+   borderBottomWidth:1,
+   borderColor:"#f2f2f2",
    padding:10,
+   marginLeft:10,
+   marginRight:10,
+   margin:5,
    justifyContent: 'center',
+ },
+ expandedLeft:{
+   color:"black",
+   fontWeight: 'bold',
+   textAlign:"left"
+ },
+ expandedRight:{
+   color:"grey",
+   textAlign:"right"
  },
  expandedDetail:{
    padding:10,
    justifyContent: 'center',
+   backgroundColor:"#f1f1f1"
+ },
+ propertiesText:{
+   color:"black",
+   fontWeight: 'bold',
+   borderBottomWidth:2,
+   borderColor:"orange",
+   marginLeft:10,
+   marginRight:10,
+   marginBottom:5,
+   padding:10,
  }
 };

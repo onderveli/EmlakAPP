@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Image, View,ScrollView } from "react-native";
-import ImageSlider from 'react-native-image-slider';
+import { Image, View,ScrollView,Dimensions } from "react-native";
+import Swiper from 'react-native-swiper';
 import { Grid, Col } from "react-native-easy-grid";
 import Accordion from 'react-native-collapsible/Accordion';
 import * as Animatable from 'react-native-animatable';
@@ -33,13 +33,71 @@ import {
 
 import styles from "./styles";
 
+
+const {width} = Dimensions.get('window')
+const stylest = {
+    container: {
+        flex: 1,
+        justifyContent: 'center'
+    },
+    image: {
+        flex: 1,
+        width
+    }
+}
+const Slider = props => ( <View style={stylest.container}>
+
+        <Image style={stylest.image} source={props.uri}/>
+
+    </View>
+
+)
+
 const SECTIONS = [
   {
-    title: 'First',
-    content: 'İlk Accordion açıldı',
+    title: 'Cephe',
+    propertySize:'3/4',
+    content: 'asdasdasd',
   },
   {
-    title: 'Second',
+    title: 'İç Özellikler',
+    propertySize:'22/51',
+    content: 'ikinci Accordion açıldı',
+  }
+  ,
+  {
+    title: 'Dış Özellikler',
+    propertySize:'6/20',
+    content: 'ikinci Accordion açıldı',
+  }
+  ,
+  {
+    title: 'Engelliye Uygun',
+    propertySize:'Belirtilmemiş',
+    content: 'ikinci Accordion açıldı',
+  }
+  ,
+  {
+    title: 'Yakınlık',
+    propertySize:'19/22',
+    content: 'ikinci Accordion açıldı',
+  }
+  ,
+  {
+    title: 'Ulaşım',
+    propertySize:'9/18',
+    content: 'ikinci Accordion açıldı',
+  }
+  ,
+  {
+    title: 'Manzara',
+    propertySize:'1/6',
+    content: 'ikinci Accordion açıldı',
+  }
+  ,
+  {
+    title: 'Konut Tipi',
+    propertySize:'3/10',
     content: 'ikinci Accordion açıldı',
   }
 ];
@@ -50,25 +108,28 @@ class Detail extends Component {
       super(props);
 
       this.state = {
-          position: 1
+          position: 0,
+          imagesSlider: [
+              require('./img/1.jpg'),
+              require('./img/2.jpg'),
+              require('./img/3.jpg')
+          ]
       };
   }
 
-  componentWillMount() {
-    this.setState({position: this.state.position === 2 ? 0 : this.state.position + 1});
-  }
 
-  componentWillUnmount() {
-      clearInterval(this.state.interval);
-  }
-
+/*Accordion*/
   _renderHeader(section, index, isActive) {
     return (
-      <Animatable.View>
-        <Text style={styles.expandedBand}>
+      <Grid style={styles.expandedBand}>
+        <Col>
+          <Text style={styles.expandedLeft}>{section.title}</Text>
+        </Col>
+        <Col>
+          <Text style={styles.expandedRight}>{section.propertySize}</Text>
+        </Col>
+      </Grid>
 
-        {section.title}</Text>
-      </Animatable.View>
     );
   }
 
@@ -82,10 +143,9 @@ class Detail extends Component {
     );
   }
 
-
   render() {
       return (
-        <Container>
+        <Container style={styles.container}>
           <Header>
             <Left>
               <Button
@@ -108,14 +168,17 @@ class Detail extends Component {
           </View>
           <ScrollView>
           <View style={styles.container}>
-              <ImageSlider
-                  images={[
-                      `http://www.dailymobile.net/wp-content/uploads/wallpapers/android-640x480-wallpapers/android-640x480-wallpaper-4582.jpg`,
-                      `http://tremendouswallpapers.com/wp-content/uploads/2015/07/Fresh-atmosphere-computers-desktop-wallpaper-640x480.jpg`,
-                      `http://www.dailymobile.net/wp-content/uploads/wallpapers/android-640x480-wallpapers/Horizon.jpg`,
-                  ]}
-                  position={this.state.position}
-                  onPositionChanged={position => this.setState({position})}/>
+              <Swiper
+              height={160}
+              bounces={true}
+              activeDotColor="white">
+                    {
+                        this.state.imagesSlider.map((item, i) => <Slider
+                        uri={item}
+                        key={i}
+                      />)
+                    }
+            </Swiper>
           </View>
           <View style={styles.infoBand}>
             <Text style={{color:"#570219",fontSize:13,textAlign:'center'}}>Emlak-Konut-Sahibinden-Kiralık</Text>
@@ -165,13 +228,13 @@ class Detail extends Component {
               </Col>
             </Grid>
           </View>
-
-          <Accordion
-            sections={SECTIONS}
-            renderHeader={this._renderHeader}
-            renderContent={this._renderContent}
-          />
-
+          <Text style={styles.propertiesText}>Özellikler</Text>
+            <Accordion
+              sections={SECTIONS}
+              renderHeader={this._renderHeader}
+              renderContent={this._renderContent}
+              underlayColor="transparent"
+            />
           </ScrollView>
           <Footer style={styles.footer}>
             <Grid>

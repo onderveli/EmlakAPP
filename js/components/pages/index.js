@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Grid, Col } from "react-native-easy-grid";
 import { Image, View,ScrollView } from "react-native";
 import {
   Container,
@@ -37,18 +38,24 @@ const himanshu = require("../../../img/contacts/3.png");
 const datas = [
   {
     img: sankhadeep,
-    text: "Emlak Deneme",
-    note: "Emlak deneme deneme deneme"
+    text: "METROBÜSE YÜRÜME MESAFESİNDE SİTE İÇERİSİNDE TAMAMINA KREDİ",
+    note: "Emlak deneme deneme deneme",
+    location:"İstanbul, Beylikdüzü",
+    price:"₺214.000"
   },
   {
     img: supriya,
-    text: "Emlak Deneme",
-    note: "Emlak deneme deneme deneme"
+    text: "METROBÜSE YÜRÜME MESAFESİNDE SİTE İÇERİSİNDE TAMAMINA KREDİ",
+    note: "Emlak deneme deneme deneme",
+    location:"İstanbul, Beylikdüzü",
+    price:"₺214.000"
   },
   {
     img: himanshu,
-    text: "Emlak Deneme",
-    note: "Emlak deneme deneme deneme"
+    text: "METROBÜSE YÜRÜME MESAFESİNDE SİTE İÇERİSİNDE TAMAMINA KREDİ",
+    note: "Emlak deneme deneme deneme",
+    location:"İstanbul, Beylikdüzü",
+    price:"₺214.000"
   }
 ];
 
@@ -364,8 +371,18 @@ class Pages extends Component {
                             <Thumbnail square size={55} source={data.img} />
                           </Left>
                           <Body>
-                            <Text>{data.text}</Text>
-                            <Text numberOfLines={1} note>{data.note}</Text>
+                            <Text style={styles.listText}>{data.text}</Text>
+                            <Text style={styles.listSubText} numberOfLines={1} note>{data.note}</Text>
+                            <Grid>
+                              <Col>
+                                <Text  style={styles.listLeftText}>
+                                <Icon name="navigate" style={{ color: "#777", fontSize: 11, width: 10 }} />
+                                {data.location}</Text>
+                              </Col>
+                              <Col>
+                                <Text style={styles.listRightText}>{data.price}</Text>
+                              </Col>
+                            </Grid>
                           </Body>
                         </ListItem>}
                     />

@@ -24,6 +24,25 @@ export default {
       backgroundColor:"#fff",
       borderWidth: 0.4,
       borderColor: '#999',
+    },
+    listText:{
+      fontSize:13.75,
+    },
+    listSubText:{
+      fontSize:13
+    },
+    listLeftText:
+    {
+      minWidth:150,
+      textAlign:"left",
+      fontSize:12
     }
-
+    ,
+    listRightText:
+    {
+      textAlign:"right",
+      fontSize:12,
+      color:"blue",
+      fontWeight:"bold"
+    }
 };
