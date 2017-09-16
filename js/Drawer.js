@@ -4,6 +4,7 @@ import React from "react";
 import { DrawerNavigator } from "react-navigation";
 
 import Login from "./components/login/";
+import Maps from "./components/map/";
 import Header from "./components/Header/";
 import Pages from "./components/pages/";
 import Detail from "./components/detail/";
@@ -41,6 +42,7 @@ import Actionsheet from "./components/actionsheet";
 const DrawerExample = DrawerNavigator(
   {
     Login: { screen: Login },
+    Maps: { screen: Maps },
     Pages: { screen: Pages },
     Detail: { screen: Detail },
     Header: { screen: Header },

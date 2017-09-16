@@ -7,6 +7,7 @@ import material from "../native-base-theme/variables/material";
 import platform from "../native-base-theme/variables/platform";
 
 import Login from "./components/login/";
+import Maps from "./components/maps/";
 import Header from "./components/Header/";
 import Header1 from "./components/Header/1";
 import Header2 from "./components/Header/2";
