@@ -7,7 +7,8 @@ import material from "../native-base-theme/variables/material";
 import platform from "../native-base-theme/variables/platform";
 
 import Login from "./components/login/";
-import Maps from "./components/maps/";
+import Maps from "./components/detail/map/";
+import Description from "./components/detail/description/";
 import Header from "./components/Header/";
 import Header1 from "./components/Header/1";
 import Header2 from "./components/Header/2";
@@ -21,6 +22,10 @@ import Header8 from "./components/Header/8";
 import Pages from "./components/pages/";
 import Detail from "./components/detail/";
 
+import About from "./components/about/";
+import PSuppport from "./components/problemSupport/";
+import CSupport from "./components/contactSupport/";
+import HSuppport from "./components/helpSupport/";
 
 import Footer from "./components/footer/";
 import BasicFooter from "./components/footer/basicFooter";

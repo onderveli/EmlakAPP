@@ -239,10 +239,13 @@ class Detail extends Component {
           <Footer style={styles.footer}>
             <Grid>
               <Col>
-                <Button full info style={styles.footerButton}><Text>Açıklama</Text></Button>
+                <Button
+onPress={() => this.props.navigation.navigate("Description")}
+                 full info style={styles.footerButton}><Text>Açıklama</Text></Button>
               </Col>
               <Col>
-                <Button full info style={styles.footerButton}><Text>Konumu</Text></Button>
+                <Button onPress={() => this.props.navigation.navigate("Maps")}
+                 full info style={styles.footerButton}><Text>Konumu</Text></Button>
               </Col>
             </Grid>
           </Footer>

@@ -7,6 +7,8 @@ import { Root } from "native-base";
 import { StackNavigator } from "react-navigation";
 
 import Drawer from "./Drawer";
+import Maps from "./components/detail/map/";
+import Description from "./components/detail/description/";
 import Header from "./components/Header/";
 import Header1 from "./components/Header/1";
 import Header2 from "./components/Header/2";
@@ -96,6 +98,9 @@ const AppNavigator = StackNavigator(
         Header8: { screen: Header8 },
 
         NHRegister:{screen:NHRegister},
+
+        Maps:{screen:Maps},
+        Description:{screen:Description},
 
         BasicFooter: { screen: BasicFooter },
         IconFooter: { screen: IconFooter },

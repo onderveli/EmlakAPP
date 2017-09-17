@@ -213,26 +213,26 @@ const datas = [
 const stabiles = [
 	{
 		name: "Hakkımızda",
-		route: "Pages",
+		route: "About",
 		icon: "attach",
 
 	},
 	{
 		name: "Sorun ve Görüş Bildirimi",
-		route: "Pages",
+		route: "PSupport",
 		icon: "flame",
 
 	},
 	{
 		name: "Yardım/İşlem Rehberi",
-		route: "Pages",
+		route: "HSupport",
 		icon: "bulb",
 
 	}
 	,
 	{
 		name: "İletişim",
-		route: "Pages",
+		route: "CSupport",
 		icon: "call",
 	}
 ];

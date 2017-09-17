@@ -4,10 +4,15 @@ import React from "react";
 import { DrawerNavigator } from "react-navigation";
 
 import Login from "./components/login/";
-import Maps from "./components/map/";
 import Header from "./components/Header/";
 import Pages from "./components/pages/";
 import Detail from "./components/detail/";
+
+
+import About from "./components/about/";
+import PSupport from "./components/problemSupport/";
+import CSupport from "./components/contactSupport/";
+import HSupport from "./components/helpSupport/";
 
 import Footer from "./components/footer/";
 import NHBadge from "./components/badge/";
@@ -42,8 +47,13 @@ import Actionsheet from "./components/actionsheet";
 const DrawerExample = DrawerNavigator(
   {
     Login: { screen: Login },
-    Maps: { screen: Maps },
     Pages: { screen: Pages },
+
+    About: { screen: About },
+    CSupport: { screen: CSupport },
+    HSupport: { screen: HSupport },
+    PSupport: { screen: PSupport },
+
     Detail: { screen: Detail },
     Header: { screen: Header },
     Footer: { screen: Footer },
